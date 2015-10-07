@@ -20,14 +20,14 @@ var exec = require('child_process').exec;
 function puts(error, stdout, stderr) { sys.puts(stdout) }
 
 function replaceStringInFile(path, find, replace) {
-  fs.readFile(__dirname + '/' + path, 'utf8', function(err, data) {
+  fs.readFile(__dirname + '/' + path, 'utf8', function(error, data) {
     if (err) {
       throw new Error('Error reading file ' + __dirname + '/' + path + ': ' + error);
     }
 
     var replacedFile = data.replace(find, replace);
 
-    fs.writeFile(__dirname + '/' + path, replacedFile, function(err) {
+    fs.writeFile(__dirname + '/' + path, replacedFile, function(error) {
       if (err) {
         throw new Error('Error writing file ' + __dirname + '/' + path + ': ' + error);
       }
@@ -40,7 +40,7 @@ function main() {
   var args = process.argv.slice(2);
   var name = args[0];
   if (name) {
-      replaceStringInFile('./starter-swift/ViewController.swift', '<YOUR-FIREBASE-APP>', name);
+      replaceStringInFile('./starter-swift/ViewController.swift', /<YOUR-FIREBASE-APP>/g, name);
   }
 
   // Pod install
