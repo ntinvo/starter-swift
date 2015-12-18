@@ -6,7 +6,7 @@
     }
   ],
   "rename": [
-    "./starter-swift/ViewController.swift",
+    "./starter-swift/ViewController.swift"
   ],
   "run": [
     "pod install"
