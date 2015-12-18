@@ -1,0 +1,14 @@
+{
+  "require": [
+    {
+      "cmd": "pod",
+      "hint": "This template requires `pod` please run `gem install cocoapods` to install."
+    }
+  ],
+  "rename": [
+    "./starter-swift/ViewController.swift",
+  ],
+  "run": [
+    "pod install"
+  ]
+}
